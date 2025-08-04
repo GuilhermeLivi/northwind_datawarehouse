@@ -14,7 +14,7 @@ with source as (
            category,
            attachments,
     from {{ source('northwind', 'products') }}
-    where supplier_ids not like "%;%"
+    where supplier_ids not like "%;%"  -- Criteria to avoid wrong marks ta turn id into string
 )
 select 
     *,
